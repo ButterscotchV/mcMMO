@@ -161,6 +161,14 @@ public final class Permissions {
     public static boolean quarteredCooldowns(Permissible permissible) { return permissible.hasPermission("mcmmo.perks.cooldowns.quartered"); }
 
     /*
+     * LEVELLING UP NOTIFICATIONS
+     */
+
+    public static boolean showExpBar(Permissible permissible) { return permissible.hasPermission("mcmmo.toggles.expbar"); }
+    public static boolean playLevelSound(Permissible permissible) { return permissible.hasPermission("mcmmo.toggles.levelsound"); }
+    public static boolean sendChatMessage(Permissible permissible) { return permissible.hasPermission("mcmmo.toggles.chatmessage"); }
+
+    /*
      * SKILLS
      */
 
