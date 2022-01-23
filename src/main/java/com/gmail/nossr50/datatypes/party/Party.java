@@ -9,6 +9,7 @@ import com.gmail.nossr50.mcMMO;
 import com.gmail.nossr50.party.PartyManager;
 import com.gmail.nossr50.util.EventUtils;
 import com.gmail.nossr50.util.Misc;
+import com.gmail.nossr50.util.Permissions;
 import com.gmail.nossr50.util.sounds.SoundManager;
 import com.gmail.nossr50.util.sounds.SoundType;
 import org.bukkit.Bukkit;
@@ -248,7 +249,7 @@ public class Party {
             if (leader != null) {
                 leader.sendMessage(LocaleLoader.getString("Party.LevelUp", levelsGained, getLevel()));
 
-                if (mcMMO.p.getGeneralConfig().getLevelUpSoundsEnabled()) {
+                if (mcMMO.p.getGeneralConfig().getLevelUpSoundsEnabled() && Permissions.playLevelSound(leader)) {
                     SoundManager.sendSound(leader, leader.getLocation(), SoundType.LEVEL_UP);
                 }
             }

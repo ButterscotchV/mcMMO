@@ -2068,6 +2068,23 @@ permissions:
         children:
             mcmmo.commands.skillreset.all: true
             mcmmo.commands.skillreset.others.all: true
+    mcmmo.toggles.*:
+        default: false
+        description: Implies all mcmmo.toggles permissions.
+        children:
+            mcmmo.toggles.all: true
+    mcmmo.toggles.all:
+        description: Implies all mcmmo.toggles permissions.
+        children:
+            mcmmo.toggles.expbar: true
+            mcmmo.toggles.levelsound: true
+            mcmmo.toggles.chatmessage: true
+    mcmmo.toggles.expbar:
+        description: Shows the EXP bar
+    mcmmo.toggles.levelsound:
+        description: Plays a sound when levelling up
+    mcmmo.toggles.chatmessage:
+        description: Sends a message to chat when levelling up
     mcmmo.skills.*:
         default: false
         description: Implies all mcmmo.skills permissions.

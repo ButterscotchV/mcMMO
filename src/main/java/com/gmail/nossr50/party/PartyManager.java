@@ -833,7 +833,7 @@ public final class PartyManager {
         for (Player member : party.getOnlineMembers()) {
             member.sendMessage(LocaleLoader.getString("Party.LevelUp", levelsGained, level));
 
-            if (levelUpSoundsEnabled) {
+            if (levelUpSoundsEnabled && Permissions.playLevelSound(member)) {
                 SoundManager.sendSound(member, member.getLocation(), SoundType.LEVEL_UP);
             }
         }
