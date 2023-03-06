@@ -47,6 +47,13 @@ jobs:
         key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
         restore-keys: ${{ runner.os }}-m2
 
-    # 4. Build via Maven 
+    # 4. Build via Maven
     - name: Build via Maven
       run: mvn verify -B --file pom.xml
+
+    # 5. Upload a build artifact
+    - name: Upload build artifact
+      uses: actions/upload-artifact@v3
+      with:
+        name: mcMMO
+        path: target/mcMMO.jar
